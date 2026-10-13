@@ -3,10 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtVista</title>
+    <title>ArtVista | Discover Art</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>ArtVista</h1>
-    <p>Discover, share, and appreciate creativity.</p>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="bg-white shadow-sm">
+        <nav class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="{% url 'home' %}" class="text-2xl font-bold text-indigo-600">
+                ArtVista
+            </a>
+
+            <div class="flex gap-4 items-center">
+                <a href="{% url 'login' %}" class="text-gray-700 hover:text-indigo-600">
+                    Login
+                </a>
+                <a href="{% url 'register' %}"
+                   class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">
+                    Register
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12">
+
+        <section class="bg-indigo-600 text-white rounded-2xl p-10 md:p-16 mb-12">
+            <p class="uppercase tracking-widest text-indigo-200 text-sm mb-3">
+                Discover creativity
+            </p>
+
+            <h1 class="text-4xl md:text-6xl font-bold mb-5">
+                Every picture tells a story.
+            </h1>
+
+            <p class="text-lg text-indigo-100 max-w-2xl mb-8">
+                Explore photography, discover beautiful artwork, and
+                connect with creative people through ArtVista.
+            </p>
+
+            <a href="#gallery"
+               class="inline-block bg-white text-indigo-700 px-6 py-3 rounded-lg font-semibold">
+                Explore Gallery
+            </a>
+        </section>
+
+        <section id="gallery">
+            <h2 class="text-3xl font-bold mb-3">Explore the gallery</h2>
+
+            <p class="text-gray-600 mb-8">
+                Discover inspiring photographs and creative artwork.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800"
+                        alt="Mountain landscape"
+                        class="w-full h-56 object-cover"
+                    >
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">Mountain Escape</h3>
+                        <p class="text-gray-600">Nature, landscapes, adventure</p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800"
+                        alt="Beautiful natural scenery"
+                        class="w-full h-56 object-cover"
+                    >
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">Natural Beauty</h3>
+                        <p class="text-gray-600">Nature, photography, outdoors</p>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img
+                        src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800"
+                        alt="Ocean waves"
+                        class="w-full h-56 object-cover"
+                    >
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold mb-2">Ocean Waves</h3>
+                        <p class="text-gray-600">Ocean, water, scenery</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t mt-12 py-6 text-center text-gray-500">
+        <p>&copy; 2026 ArtVista. Celebrating creativity.</p>
+    </footer>
+
 </body>
 </html>
