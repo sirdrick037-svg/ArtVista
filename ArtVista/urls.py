@@ -20,5 +20,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('gallery.urls')),
-    path("upload/", views.upload_artwork, name="upload_artwork"),
 ]

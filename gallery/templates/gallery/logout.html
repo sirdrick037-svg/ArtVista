@@ -1,0 +1,44 @@
+`<!DOCTYPE html>`
+`<html lang="en">`
+`<head>`
+    `<meta charset="UTF-8">`
+    `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+    `<title>Logged Out | ArtVista</title>`
+    `<style>`
+        `body {`
+            `font-family: Arial, sans-serif;`
+            `background-color: #f4f1eb;`
+            `text-align: center;`
+            `padding: 80px 20px;`
+        `}`
+        `.logout-container {`
+            `background: white;`
+            `max-width: 500px;`
+            `margin: auto;`
+            `padding: 40px;`
+            `border-radius: 12px;`
+            `box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);`
+        `}`
+        `h1 { color: #6b4f3a; }`
+        `p { color: #555; }`
+        `a {`
+            `display: inline-block;`
+            `margin: 10px;`
+            `padding: 12px 20px;`
+            `background: #6b4f3a;`
+            `color: white;`
+            `text-decoration: none;`
+            `border-radius: 6px;`
+        `}`
+        `a:hover { background: #4e392a; }`
+    `</style>`
+`</head>`
+`<body>`
+    `<div class="logout-container">`
+        `<h1> Logged Out</h1>`
+        `<p>Thank you for visiting ArtVista. We hope to see you again soon!</p>`
+        `<a href="{% url 'login' %}">Log In Again</a>`
+        `<a href="{% url 'home' %}">Return Home</a>`
+    `</div>`
+`</body>`
+`</html>`
