@@ -25,6 +25,21 @@
                     Register
                 </a>
             </div>
+            
+{% if user.is_authenticated %}
+    <span>Welcome, {{ user.username }}</span>
+
+    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" style="border: none; background: none; cursor: pointer;">
+            <span aria-hidden="true">↪</span> Logout
+        </button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}"/a>
+    <a href="{% url 'register' %}"/a>
+{% endif %}
+
         </nav>
     </header>
 
