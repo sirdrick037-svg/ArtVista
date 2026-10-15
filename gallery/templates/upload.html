@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Artwork | ArtVista</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f4ef;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .upload-container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #6b422d;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        input, textarea, select {
+            max-width: 100%;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            margin: 8px 0 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #6b422d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #4e3021;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #6b422d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="upload-container">
+        <h1>Upload Your Artwork 🎨</h1>
+        <p>Share your creativity with the ArtVista community.</p>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">Upload Artwork</button>
+        </form>
+
+        <a class="back-link" href="{% url 'home' %}">
+            ← Back to Home
+        </a>
+    </div>
+</body>
+</html>
