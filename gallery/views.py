@@ -4,6 +4,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django import forms
+from django.contrib.auth.decorators import login_required
+from .forms import ArtworkForm
+
 
 # Create your views here.
 def home(request):
@@ -31,3 +34,20 @@ def register(request):
         form = RegistrationForm()
 
     return render(request, "gallery/register.html", {"form": form})
+
+
+@login_required
+def upload_artwork(request):
+    if request.method == "POST":
+        form = ArtworkForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            artwork = form.save(commit=False)
+            artwork.artist = request.user
+            artwork.save()
+            messages.success(request, "Your artwork was uploaded successfully!")
+            return redirect("home")
+    else:
+        form = ArtworkForm()
+
+    return render(request, "gallery/upload.html", {"form": form})
